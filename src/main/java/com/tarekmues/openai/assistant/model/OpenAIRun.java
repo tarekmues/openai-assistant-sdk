@@ -12,13 +12,10 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIRun {
+public class OpenAIRun extends OpenAIEntity {
 
     @JsonProperty("id")
     private String id;
-
-    @JsonProperty("object")
-    private String object;
 
     @JsonProperty("created_at")
     private Instant createdAt;
@@ -69,7 +66,7 @@ public class OpenAIRun {
     private Map<String, String> metadata;
 
     @JsonProperty("usage")
-    private OpenAIRunUsage usage;
+    private OpenAIResourceUsage usage;
 
     @JsonProperty("temperature")
     private float temperature;

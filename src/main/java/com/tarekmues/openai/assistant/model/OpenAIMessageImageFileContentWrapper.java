@@ -13,4 +13,14 @@ public class OpenAIMessageImageFileContentWrapper extends OpenAIMessageContent {
     @JsonProperty("image_file")
     private OpenAIMessageImageFileContent imageFile;
 
+    @NoArgsConstructor
+    @Getter
+    @Setter
+    public static class OpenAIMessageImageFileContent {
+
+        @JsonProperty("file_id")
+        private String fileId;
+
+    }
+
 }

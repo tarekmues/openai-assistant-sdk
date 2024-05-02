@@ -8,9 +8,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIFilePathWrapper extends OpenAIMessageContentTextAnnotation {
+public class OpenAIThreadDeletionStatus extends OpenAIEntity {
 
-    @JsonProperty("file_path")
-    private OpenAIFilePath filePath;
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("deleted")
+    private boolean deleted;
 
 }

@@ -12,13 +12,10 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIAssistant {
+public class OpenAIAssistant extends OpenAIEntity {
 
     @JsonProperty("id")
     private String id;
-
-    @JsonProperty("object")
-    private String object;
 
     @JsonProperty("created_at")
     private Instant created_at;

@@ -10,13 +10,10 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIMessageDelta {
+public class OpenAIMessageDelta extends OpenAIEntity {
 
     @JsonProperty("id")
     private String id;
-
-    @JsonProperty("object")
-    private String object;
 
     @JsonProperty("delta")
     private OpenAIMessageDeltaDelta delta;

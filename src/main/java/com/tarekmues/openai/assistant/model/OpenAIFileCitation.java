@@ -6,14 +6,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
-@Getter
 @Setter
-public class OpenAIFileCitation {
+@Getter
+public class OpenAIFileCitation extends OpenAIMessageContentTextAnnotation {
 
-    @JsonProperty("file_id")
-    private String fileId;
+    @JsonProperty("file_citation")
+    private OpenAIFileCitationContent fileCitation;
 
-    @JsonProperty("quote")
-    private String quote;
+    @NoArgsConstructor
+    @Getter
+    @Setter
+    public static class OpenAIFileCitationContent {
+
+        @JsonProperty("file_id")
+        private String fileId;
+
+        @JsonProperty("quote")
+        private String quote;
+
+    }
 
 }

@@ -9,8 +9,8 @@ import lombok.Setter;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = OpenAIFileCitationWrapper.class, name = "file_citation"),
-        @JsonSubTypes.Type(value = OpenAIFilePathWrapper.class, name = "file_path")
+        @JsonSubTypes.Type(value = OpenAIFileCitation.class, name = "file_citation"),
+        @JsonSubTypes.Type(value = OpenAIFilePath.class, name = "file_path")
 })
 @NoArgsConstructor
 @Getter

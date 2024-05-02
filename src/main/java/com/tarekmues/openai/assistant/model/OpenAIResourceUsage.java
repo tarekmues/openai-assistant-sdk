@@ -8,7 +8,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIRunUsage {
+public class OpenAIResourceUsage {
 
     @JsonProperty("completion_tokens")
     private int completionTokens;

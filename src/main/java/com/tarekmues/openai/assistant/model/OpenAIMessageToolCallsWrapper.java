@@ -5,12 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIMessageImageFileContent {
+public class OpenAIMessageToolCallsWrapper extends OpenAIRunStepDetails {
 
-    @JsonProperty("file_id")
-    private String fileId;
-
+    @JsonProperty("tool_calls")
+    private List<OpenAIAssistantTool> toolCalls;
 }
