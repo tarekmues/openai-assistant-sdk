@@ -11,7 +11,7 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIThread extends OpenAIEntity {
+public class OpenAIThread extends OpenAIStreamingEntity {
 
     @JsonProperty("id")
     private String id;

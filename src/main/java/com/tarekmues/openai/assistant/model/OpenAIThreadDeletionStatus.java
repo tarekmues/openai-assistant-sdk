@@ -8,7 +8,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIThreadDeletionStatus extends OpenAIEntity {
+public class OpenAIThreadDeletionStatus extends OpenAIStreamingEntity {
 
     @JsonProperty("id")
     private String id;

@@ -1,9 +1,8 @@
 package com.tarekmues.openai.assistant.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import com.tarekmues.openai.assistant.api.message.OpenAIMessageCreationBody;
+import lombok.*;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,7 @@ import java.util.Map;
 public class OpenAIThreadCreationBody {
 
     @JsonProperty("messages")
-    private List<OpenAIMessage> messages;
+    private List<OpenAIMessageCreationBody> messages;
 
     @JsonProperty("tool_resources")
     private List<OpenAIToolResources> toolResources;

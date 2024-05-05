@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAICodeInterpreterToolResources extends OpenAIToolResources {
+public class OpenAICodeInterpreterToolResources {
 
     @JsonProperty("file_ids")
     private List<String> fileIds;

@@ -1,33 +1,40 @@
 package com.tarekmues.openai.assistant.configuration;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tarekmues.openai.assistant.api.MessageApi;
-import com.tarekmues.openai.assistant.api.RunApi;
-import com.tarekmues.openai.assistant.api.ThreadApi;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.tarekmues.openai.assistant.api.message.MessageApi;
+import com.tarekmues.openai.assistant.api.run.RunApi;
+import com.tarekmues.openai.assistant.api.run.step.RunStepApi;
+import com.tarekmues.openai.assistant.api.thread.ThreadApi;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @AutoConfiguration
+@EnableConfigurationProperties(WebClientConfigurationProperties.class)
 public class ApiConfiguration {
 
-    @Bean
-    public MessageApi messageApi(@Qualifier("open-ai-assistant-client") WebClient webClient) {
-        return new MessageApi(webClient);
+    private final WebClientConfiguration webClientConfiguration;
+
+    public ApiConfiguration(WebClientConfigurationProperties webClientConfigurationProperties) {
+        this.webClientConfiguration = new WebClientConfiguration(webClientConfigurationProperties);
     }
 
     @Bean
-    public ThreadApi threadApi(@Qualifier("open-ai-assistant-client") WebClient webClient) {
-        return new ThreadApi(webClient);
+    public MessageApi messageApi() {
+        return new MessageApi(this.webClientConfiguration.webClient);
     }
 
     @Bean
-    public RunApi runApi(@Qualifier("open-ai-assistant-client") WebClient webClient, ObjectMapper mapper) {
-        return new RunApi(webClient, mapper);
+    public ThreadApi threadApi() {
+        return new ThreadApi(this.webClientConfiguration.webClient);
     }
 
-    public ObjectMapper mapper() {
-        return new ObjectMapper();
+    @Bean
+    public RunApi runApi() {
+        return new RunApi(this.webClientConfiguration.webClient, this.webClientConfiguration.apiMapper);
+    }
+
+    @Bean
+    public RunStepApi runStepApi() {
+        return new RunStepApi(this.webClientConfiguration.webClient);
     }
 }

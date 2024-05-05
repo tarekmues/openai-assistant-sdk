@@ -1,6 +1,7 @@
 package com.tarekmues.openai.assistant.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.tarekmues.openai.assistant.api.message.OpenAIMessageContentTextAnnotation;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

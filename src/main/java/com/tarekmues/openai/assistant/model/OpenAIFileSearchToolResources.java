@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIFileSearchToolResources extends OpenAIToolResources {
+public class OpenAIFileSearchToolResources {
 
     @JsonProperty("vector_store_ids")
     private List<String> vectorStoreIds;

@@ -12,7 +12,7 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OpenAIAssistant extends OpenAIEntity {
+public class OpenAIAssistant extends OpenAIStreamingEntity {
 
     @JsonProperty("id")
     private String id;
