@@ -15,8 +15,8 @@ public class OpenAICreateThreadAndRunStreamingRequestBody extends OpenAICreateRu
     @JsonProperty("thread")
     private OpenAIThreadCreationBody thread;
 
-    public OpenAICreateThreadAndRunStreamingRequestBody(@NonNull String assistantId, @NonNull OpenAIThreadCreationBody thread, String instructions) {
-        super(assistantId, instructions);
+    public OpenAICreateThreadAndRunStreamingRequestBody(@NonNull String assistantId, @NonNull OpenAIThreadCreationBody thread, String instructions, String additionalInstructions) {
+        super(assistantId, instructions, additionalInstructions);
         this.thread = thread;
     }
 

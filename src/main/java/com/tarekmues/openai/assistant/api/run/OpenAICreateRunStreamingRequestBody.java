@@ -17,6 +17,9 @@ public class OpenAICreateRunStreamingRequestBody {
     @JsonProperty("instructions")
     private String instructions;
 
+    @JsonProperty("additional_instructions")
+    private String additionalInstructions;
+
     //TODO
     //@JsonProperty("tool_choice")
     //private Object toolChoice;
@@ -24,8 +27,9 @@ public class OpenAICreateRunStreamingRequestBody {
     @JsonProperty("stream")
     private final boolean stream = true;
 
-    public OpenAICreateRunStreamingRequestBody(@NonNull String assistantId, String instructions) {
+    public OpenAICreateRunStreamingRequestBody(@NonNull String assistantId, String instructions, String additionalInstructions) {
         this.assistantId = assistantId;
         this.instructions = instructions;
+        this.additionalInstructions = additionalInstructions;
     }
 }
