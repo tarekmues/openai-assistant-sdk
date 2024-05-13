@@ -4,6 +4,7 @@ import com.tarekmues.openai.assistant.api.message.MessageApi;
 import com.tarekmues.openai.assistant.api.run.RunApi;
 import com.tarekmues.openai.assistant.api.run.step.RunStepApi;
 import com.tarekmues.openai.assistant.api.thread.ThreadApi;
+import com.tarekmues.openai.assistant.files.OpenAIFilesApi;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -36,5 +37,10 @@ public class ApiConfiguration {
     @Bean
     public RunStepApi runStepApi() {
         return new RunStepApi(this.webClientConfiguration.webClient);
+    }
+
+    @Bean
+    public OpenAIFilesApi fileApi() {
+        return new OpenAIFilesApi(this.webClientConfiguration.webClient);
     }
 }
