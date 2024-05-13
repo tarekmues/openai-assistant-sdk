@@ -14,5 +14,5 @@ public class OpenAIMessageTextContentDeltaWrapper extends OpenAIMessageContentDe
     private int index;
 
     @JsonProperty("text")
-    private OpenAIMessageTextContent text;
+    private OpenAIMessageDeltaTextContent text;
 }

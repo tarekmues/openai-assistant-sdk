@@ -8,6 +8,7 @@ import lombok.Setter;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
+        @JsonSubTypes.Type(value = OpenAIMessageImageUrlContentDeltaWrapper.class, name = "image_url"),
         @JsonSubTypes.Type(value = OpenAIMessageImageFileContentDeltaWrapper.class, name = "image_file"),
         @JsonSubTypes.Type(value = OpenAIMessageTextContentDeltaWrapper.class, name = "text")
 })

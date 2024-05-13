@@ -1,15 +1,18 @@
 package com.tarekmues.openai.assistant.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.tarekmues.openai.assistant.api.message.OpenAIMessageContentTextAnnotation;
+import com.tarekmues.openai.assistant.api.message.OpenAIMessageContentDeltaTextAnnotation;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
-@Setter
 @Getter
-public class OpenAIFileCitation extends OpenAIMessageContentTextAnnotation {
+@Setter
+public class OpenAIMessageContentDeltaAnnotationFileCitation extends OpenAIMessageContentDeltaTextAnnotation {
+
+    @JsonProperty("index")
+    private int index;;
 
     @JsonProperty("file_citation")
     private OpenAIFileCitationContent fileCitation;
